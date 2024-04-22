@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Geolocation</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <link rel="icon" type="image/x-icon"
+        href="data:image/png;base64,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">
+    <link rel="stylesheet" href="{{url_for('static',filename='./map.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            margin: 0 20px;
+            border-radius: 23px;
+            height: 100vh;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+
+        #stopNameInput {
+            height: 40px;
+            position: absolute;
+            /* Position the input field absolutely */
+            top: 140px;
+            /* Adjust the top position as needed */
+            left: 100px;
+            /* Adjust the left position as needed */
+            z-index: 1000;
+            /* Ensure input field is above the map */
+            width: 200px;
+            /* Adjust width as needed */
+            padding: 10px;
+            /* Adjust padding as needed */
+            box-sizing: border-box;
+            border: 3px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #submitBtn {
+            width: 60px;
+            position: absolute;
+            /* Position the input field absolutely */
+            top: 142px;
+            /* Adjust the top position as needed */
+            left: 310px;
+            /* Adjust the left position as needed */
+            height: 38px;
+            z-index: 1000;
+            /* Ensure input field is above the map */
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: aliceblue;
+            background-color: rgba(39, 78, 250, 0.986);
+        }
+
+        #submitBtn:hover {
+            background-color: rgba(39, 148, 250, 0.986);
+        }
+
+        /* Custom CSS */
+.small-alert {
+    margin-top:30px;
+    background-color: #4caf4fbe; /* Green color */
+    color: white; /* Text color */
+    padding: 10px; /* Padding */
+    border-radius: 12px; /* Rounded corners */
+    font-size: 14px; /* Font size */
+    width: 400px; /* Width of the alert box */
+}
+
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar">
+
+        <span class="nav-content1">Jyothi Bus<span class="nav-content2"> •</span></span>
+
+    </nav>
+    <br>
+    <div id="map"></div>
+    <input type="text" id="stopNameInput" placeholder="Type stop name...">
+    <button id="submitBtn">Submit</button>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        var map = L.map('map').setView([10.73178, 76.42806], 17); // Set map center to one of the provided points
+        mapLink = "<a href='http://openstreetmap.org'>OpenStreetMap</a>";
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: 'Leaflet &copy; ' + mapLink + ', contribution',
+            maxZoom: 18
+        }).addTo(map);
+
+        var taxiIcon = L.icon({
+            iconUrl: "{{url_for('static',filename='./images/vehicle-1.png')}}",
+            iconSize: [32, 28]
+        })
+
+        var marker = L.marker([10.73178, 76.42806], {
+            icon: taxiIcon
+        }).addTo(map);
+
+        var locations = [
+            { coords: [10.726177230810732, 76.4257114659339], name: "kuthampully",time:"07:54 Am" },
+            { coords: [10.723288330914126, 76.42554486593386], name: "Kattukulam" ,time:"07:57 Am"},
+            { coords: [10.71492434008062, 76.42839142545938], name: "parabhakalode" ,time:"07:58 Am"},
+            { coords: [10.693899431964343, 76.42510670826114], name: "Vadakkethara",time:"08:02 Am" },
+            { coords: [10.685232744393886, 76.42046309673147], name: "Pazhayannur",time:"08:04 Am" },
+            { coords: [10.689548361951095, 76.37624695125072], name: "Chelakkode",time:"08:11 Am" },
+            { coords: [10.694190561982102, 76.35163889476969], name: "Meppadam" ,time:"08:16 Am"},
+            { coords: [10.69271547455173, 76.34551267942496], name: "Mugharikkunnu",time:"08:17 Am" },
+            { coords: [10.69277778946176, 76.34427340826112], name: "little flower girl hss" ,time:"08:17 Am"},
+            { coords: [10.693732731970266, 76.34250819291636], name: "Chelakkara Old stand" ,time:"08:18 Am"},
+            { coords: [10.694316209132273, 76.33833812960933], name: "Chelakkara" ,time:"08:20 Am"},
+            { coords: [10.695937206887116, 76.326798162175], name: "Chelakkara Police. S" ,time:"08:20 Am"},
+            { coords: [10.711605778946065, 76.31883369881852], name: "Thonoorkara" ,time:"08:22 Am"},
+            { coords: [10.71490614766826, 76.31869439477], name: "Killinandalam",time:"08:25 Am" },
+            { coords: [10.717711647763384, 76.31638889476997], name: "Killimandalam" ,time:"08:26 Am"},
+            { coords: [10.71886780616823, 76.31536109476994], name: "Kochampaddi" ,time:"08:27"},
+        ];
+
+        document.getElementById("submitBtn").addEventListener("click", function () {
+            var stopName = document.getElementById("stopNameInput").value.trim(); // Get the stop name from the input field
+            if (stopName === "") {
+                alert("Please enter a stop name.");
+                return;
+            }
+
+
+            var stop = locations.find(function (location) {
+                return location.name.toLowerCase() === stopName.toLowerCase(); // Find the stop in the locations array
+            });
+
+            if (!stop) {
+                alert("Stop not found.");
+                return;
+            }
+
+            // map.setView(stop.coords, 17); // Set map view to the stop location
+            var popupContent = "<strong>" + stop.name + "</strong><br>" + "Time: " + stop.time; // Assuming you have a function to get time for the location
+            Swal.fire({
+    title: "Stop: " + stop.name,
+    html: "Actual Time: " + stop.time + "<br>Expected Time: " + stop.time,
+
+    // icon: "success",
+    position: 'top-end', // Set the position of the modal to the top right corner
+    showConfirmButton: false, // Hide the confirm button
+    timer: 3000, // Set a timer to automatically close the modal after 3 seconds
+    customClass: {
+        popup: 'small-alert' // Apply the custom class to the alert box
+    }
+});
+            L.marker(stop.coords).addTo(map).bindPopup(popupContent).openPopup(); // Add marker and open popup
+        });
+
+
+        locations.forEach(function (location) {
+            var popupContent = "<strong>" + location.name + "</strong><br>" + "Time: " + getTimeForLocation(location); // Assuming you have a function to get time for the location
+
+            L.marker(location.coords).addTo(map).bindPopup(popupContent);
+        });
+
+        function getTimeForLocation(location) {
+            return "10:00 AM"; // Static time for demonstration
+        }
+
+        var routingControl = L.Routing.control({
+            waypoints: [
+                { lat: 10.73178, lng: 76.42806, popupText: "Starting Point" },
+                { lat: 10.71889, lng: 76.31536, popupText: "Ending Point" } // Convert ending point to decimal degrees
+            ]
+        }).addTo(map);
+
+
+        (function fetchData() {
+            fetch("https://map-integration-53d9e-default-rtdb.firebaseio.com/.json?auth=Resky2hsH3Pq8jnfuUktAFvhhJSXhflJvwzu0C0z")
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    if (!data || typeof data !== 'object' || !('lat' in data) || !('lng' in data)) {
+                        throw new Error("Invalid or missing latitude or longitude data");
+                    }
+                    var lat = data.lat;
+                    var lng = data.lng;
+
+                    console.log("Latitude:", lat);
+                    console.log("Longitude:", lng);
+
+                    // Assuming marker is properly defined and accessible
+                    marker.setLatLng([lat, lng]);
+
+                    map.setView([lat, lng], 15);
+
+                    setTimeout(fetchData, 1000); // Adjust the interval for fetching data
+                })
+                .catch(error => console.error("Error fetching data", error));
+        })();
+
+    </script>
+</body>
+
+</html>

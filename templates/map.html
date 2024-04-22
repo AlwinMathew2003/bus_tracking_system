@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jyothi Bus Tracking System</title>
+    <link rel="icon" type="image/x-icon"
+        href="data:image/png;base64,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">
+    <link rel="stylesheet" href="{{url_for('static',filename='./map.css')}}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+{%if message%}
+<script>
+    alert("{{message}}");
+</script>
+{%endif%}
+    <nav class="navbar" >
+
+        <span class="nav-content1">Jyothi Bus<span
+               class="nav-content2"> •</span></span>
+
+    </nav>
+    <br>
+    <div class="home">
+        <div class="new1">
+            <p id="typewriter"></p>
+            <!-- <p style="color:white; text-align:center; font-size:medium;">Track you bus live!</p> -->
+        </div>
+        <form class="form" action="http://127.0.0.1:5000/" method="POST">
+            <div class="row">
+
+                <div class="col">
+                    <label class="label1">ENTER YOUR JECC ID</label>
+                    <input type="text" class="form-control"
+                        placeholder="ENTER YOUR ID" style="font-family: 'Inter','system-ui';font-weight: bold;border-width: 5px;" oninvalid="alert('Please begin your ID with jecc/JECC');"pattern="^(jec|JEC|ljec|LJEC)[a-zA-Z0-9_\-]*$">
+                </div>
+                <div class="col">
+                    <label class="label2">ENTER YOUR BUS NO</label>
+                    <input type="text" class="form-control" name="busno"
+                        placeholder="ENTER THE BUS NO" style="font-family: 'Inter','system-ui';font-weight: bold; border-width: 5px;">
+                </div>
+            </div>
+            <button type="submit" class="btn" style=" font-family: 'Inter','system-ui';font-weight: bold;">TRACK</button>
+        </form>
+        <p class="simple-text">Get Ready to Track Your College Bus
+            !</p>
+    </div>
+
+    <div class="container1">
+        <div class="imgdiv">
+            <img class="imgp" src="{{url_for('static',filename='./images/Designer (1) copy.jpg')}}">
+        </div>
+        <div class="text1">
+            <h1 class="text-head">
+                Online Bus Tracking with Jyothi Bus
+            </h1>
+            <br>
+            <p class="text-para">
+                Welcome to our Real-Time College Bus Tracking System! It's designed specifically for you, our college
+                students and staff, to make your bus journeys smoother. With our system, you can easily check where your
+                college bus is at any time. No more guessing about when and where to catch your bus—we've got you
+                covered!
+                Once your bus service is active, our live tracking kicks in. Simply hop onto our website or app from
+                your phone or computer, and you'll see exactly where your bus is. It's like having your bus right in
+                your pocket! You'll know when and where to catch it and even track its progress to your destination. Say
+                goodbye to waiting in the dark—we've made college commuting a breeze!
+
+            </p>
+        </div>
+    </div>
+    <br>
+    <div class="text2" >
+        <div class="imgdiv2">
+            <img class="imgp2" src="{{url_for('static',filename='./images/Designer (2) copy.jpg')}}">
+        </div>
+        <div  class="text-head2">
+            <h1 class="text-head">
+                Jyothi Bus Live Tracking
+            </h1>
+            <br>
+            <p class="text-para">
+                Introducing our Real-Time College Bus Tracking System, utilizing advanced GPS technology to provide live
+                bus location information at your fingertips. Our predictive technology offers estimated arrival times,
+                current bus status, and precise location updates as it approaches your destination.
+                With our system, tracking your college bus is as easy as checking your phone. Whether you're at your
+                desktop, using a smart device, or simply on your mobile phone, you can monitor your bus's live status
+                with internet access. Stay informed about departure and arrival timings, and get real-time alerts if
+                your bus is running early or delayed due to traffic, road repairs, or weather conditions.
+                Our live tracking feature isn't just for you—it's for your peace of mind and convenience. Passengers and
+                their families can coordinate pickups and drops effortlessly by tracking the bus's location on a map.
+                Use this information to plan your journey efficiently, ensuring you reach your boarding point on time
+                and arrive at your destination hassle-free.
+
+            </p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="text3">
+        <div class="imgdiv3">
+            <img src="{{url_for('static',filename='./images/Designer.png')}}" class="imgp3">
+        </div>
+        <divb style="margin-top:90px">
+            <h1 style=" margin-left:130px; font-size:5vh;padding-bottom:10px;font-weight: bold;  font-family: 'Inter','system-ui';">
+                How Does the Bus Tracking System Work?
+            </h1>
+            <br>
+            <p class="text-para2">
+                Our Real-Time College Bus Tracking System makes tracking your bus location effortless. Simply input your
+                JECC ID along with your Bus number in the search box, and voila! You'll gain access to real-time updates
+                on your bus's whereabouts. Additionally, you can conveniently check the schedule timings of your bus
+                route, ensuring a smooth and enjoyable experience. Happy tracking and safe travels!
+            </p>
+    </div>
+    </div>
+    <script>
+        const text = "Jyothi Bus Tracking System";
+        const speed = 50; // typing speed in milliseconds
+        const repeatInterval = 8000; // repeat interval in milliseconds
+
+        function typeWriter() {
+            let i = 0;
+            const intervalId = setInterval(() => {
+                if (i >= text.length) {
+                    clearInterval(intervalId); // Stop typing when all characters are displayed
+                } else {
+                    document.getElementById("typewriter").innerHTML += text.charAt(i);
+                    i++;
+                }
+            }, speed);
+        }
+
+        // Call the function to start typing
+        typeWriter();
+
+        // Repeat the typing process every 8 seconds
+        setInterval(() => {
+            document.getElementById("typewriter").innerHTML = ""; // Clear previous text
+            typeWriter(); // Start typing again
+        }, repeatInterval);
+
+    </script>
+    <br>
+    <br>
+    <footer class="new_footer_area bg_color">
+        <div class="new_footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s"
+                            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+                            <h3 class="f-title f_600 t_color f_size_18" style=" font-family: 'Inter','system-ui';">Get in Touch</h3>
+                            <p style=" font-family: 'Inter','system-ui';font-weight: bold;">Don’t miss any updates of our new templates and extensions.!</p>
+                            <form action="#" class="f_subscribe_two mailchimp" method="post" novalidate="true"
+                                _lpchecked="1">
+                                <input type="text" name="EMAIL" class="form-control memail" placeholder="Email" style=" font-family: 'Inter','system-ui';
+                            font-weight: bold;">
+                                <button class="btn btn_get btn_get_two" type="submit" style=" font-family: 'Inter','system-ui';
+                            font-weight: bold;">Subscribe</button>
+                                <p class="mchimp-errmessage" style="display: none;"></p>
+                                <p class="mchimp-sucmessage" style="display: none;"></p>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s"
+                            style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                            <h3 class="f-title f_600 t_color f_size_18" style=" font-family: 'Inter','system-ui';">Download</h3>
+                            <ul class="list-unstyled f_list">
+                                <li><a href="#" style="font-weight:500;font-family: 'Inter','system-ui';">Company</a></li>
+                                <li><a href="#" style="font-weight:500;font-family: 'Inter','system-ui';">Android App</a></li>
+                                <li><a href="#" style="font-weight:500;font-family: 'Inter','system-ui';">iOS App</a></li>
+                                <li><a href="#" style="font-weight:500;font-family: 'Inter','system-ui';">Desktop</a></li>
+                                <li><a href="#" style="font-weight:500;font-family: 'Inter','system-ui';">Desktop</a></li>
+                                <li><a href="#" style="font-weight:500;font-family: 'Inter','system-ui';">Desktop</a></li>
+                                <li><a href="#" style="font-weight:500;font-family: 'Inter','system-ui';">Projects</a></li>
+                                <li><a href="#" style="font-weight:500;font-family: 'Inter','system-ui';">My tasks</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s"
+                            style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                            <h3 class="f-title f_600 t_color f_size_18" style=" font-family: 'Inter','system-ui';">Help</h3>
+                            <ul class="list-unstyled f_list">
+                                <li><a href="#" style="font-weight:500;font-family: 'Inter','system-ui';">FAQ</a></li>
+                                <li><a href="#" style="font-weight:500;font-family: 'Inter','system-ui';">Term &amp; conditions</a></li>
+                                <li><a href="#" style="font-weight:500;font-family: 'Inter','system-ui';">Reporting</a></li>
+                                <li><a href="#" style="font-weight:500;font-family: 'Inter','system-ui';">Documentation</a></li>
+                                <li><a href="#" style="font-weight:500;font-family: 'Inter','system-ui';">Support Policy</a></li>
+                                <li><a href="#" style="font-weight:500;font-family: 'Inter','system-ui';">Privacy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s"
+                            style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
+                            <h3 class="f-title f_600 t_color f_size_18" style=" font-family: 'Inter','system-ui';">Team Solutions</h3>
+                            <div class="f_social_icon">
+                                <a href="https://twitter.com/JyothiBUS" class="fab fa-twitter">
+                                  <img src="{{url_for('static',filename='./images/x.png')}}" style="height:50px;margin-left:-13px;margin-bottom:34px;margin-top:-3px;">
+                                </a>
+                                <a href="https://www.instagram.com/jyothibus24?igsh=ZHd6NzFocHp1a2sx" class="fab fa-instagram">
+                                    <img src="{{url_for('static',filename='./images/insta.png')}}" style="height:30px;margin-left:1px;margin-bottom: 45px;margin-top:6px;"></a>
+                                </a>
+                                <a href="" class="fab fa-pinterest">
+                                    <img src="{{url_for('static',filename='./images/pin.webp')}}" style="height:35px;margin-left:1px;margin-bottom:45px;margin-top:4px;"></a>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bg">
+                <div class="footer_bg_one"></div>
+                <div class="footer_bg_two"></div>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-sm-7">
+                        <p class="mb-0 f_400" style="font-family: 'Inter','system-ui';font-weight: bold;">© AYINU?  Inc.. 2024 All rights reserved.</p>
+                    </div>
+                    <div class="col-lg-6 col-sm-5 text-right">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
