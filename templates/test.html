@@ -1,24 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
     <script>
-        (function fetchTime(){
-            fetch("http://127.0.0.1:5000/get_time")
-            .then(response => {
-            console.log(response)
-            response.text()})
-            .then(data => {
-                console.log(data);
-            })
-            .catch(error => console.error("Something went wrong:", error));
+        (function fetchTime() {
+            fetch("https://jyothibus-7df1c-default-rtdb.firebaseio.com/.json?auth=ZKGX7bVZWcxqotITesLD0nXBKqlCtXNGrUhl8k9c")
+                .then(response => {
+                    console.log(response)
+                    return response.json()
+                })
+                .then(data => {
+                    console.log(data);
+                    const { data: rawData } = data;
+                    const parts = rawData.split(',');
+                    console.log(parts)
+
+
+                    // Extract latitude and longitude values
+                    const latitudeValue = parseFloat(parts[0]);
+                    const longitudeValue = parseFloat(parts[2]);
+
+                    // Extract latitude and longitude directions
+                    const latitudeDirection = parts[1];
+                    const longitudeDirection = parts[3];
+
+                    // Convert latitude and longitude to decimal degrees
+                    const latitudeDegrees = Math.floor(latitudeValue / 100); // Extract degrees
+                    const latitudeMinutes = (latitudeValue % 100) / 60; // Convert minutes to decimal
+                    const latitude = latitudeDegrees + latitudeMinutes; // Combine degrees and decimal minutes
+                    const longitudeDegrees = Math.floor(longitudeValue / 100); // Extract degrees
+                    const longitudeMinutes = (longitudeValue % 100) / 60; // Convert minutes to decimal
+                    const longitude = longitudeDegrees + longitudeMinutes; // Combine degrees and decimal minutes
+
+                    // Determine the sign of latitude and longitude based on direction
+                    const latitudeSign = latitudeDirection === 'N' ? 1 : -1;
+                    const longitudeSign = longitudeDirection === 'E' ? 1 : -1;
+
+                    // Calculate actual latitude and longitude
+                    const actualLatitude = latitude * latitudeSign;
+                    const actualLongitude = longitude * longitudeSign;
+
+                    console.log("Latitude:", actualLatitude);
+                    console.log("Longitude:", actualLongitude);
+
+
+
+                    const time = parts[5];
+
+                    const hours = time.substring(0, 2);
+                    const minutes = time.substring(2);
+
+                    const actualTime = hours + ':' + minutes
+
+                    console.log("Time:", actualTime);
+
+                })
+                .catch(error => console.error("Something went wrong:", error));
         })();
     </script>
-    
+
 </body>
+
 </html>

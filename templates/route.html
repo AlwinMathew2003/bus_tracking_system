@@ -41,7 +41,7 @@
             /* Ensure input field is above the map */
             width: 200px;
             /* Adjust width as needed */
-            padding: 10px;
+            padding: 2px;
             /* Adjust padding as needed */
             box-sizing: border-box;
             border: 3px solid #ccc;
@@ -93,7 +93,25 @@
     </nav>
     <br>
     <div id="map"></div>
-    <input type="text" id="stopNameInput" placeholder="Type stop name...">
+    <select name="stopName" id="stopNameInput">
+        <option value="kuthampully">Kuthampully</option>
+        <option value="Kattukulam">Kattukulam</option>
+        <option value="parabhakalode">Parabhakalode</option>
+        <option value="Vadakkethara">Vadakkethara</option>
+        <option value="Pazhayannur">Pazhayannur</option>
+        <option value="Chelakkode">Chelakkode</option>
+        <option value="Meppadam">Meppadam</option>
+        <option value="Mugharikkunnu">Mugharikkunnu</option>
+        <option value="little flower girl hss">Little Flower Girl HSS</option>
+        <option value="Chelakkara Old stand">Chelakkara Old Stand</option>
+        <option value="Chelakkara">Chelakkara</option>
+        <option value="Chelakkara Police. S">Chelakkara Police. S</option>
+        <option value="Thonoorkara">Thonoorkara</option>
+        <option value="Killinandalam">Killinandalam</option>
+        <option value="Killimandalam">Killimandalam</option>
+        <option value="Kochampaddi">Kochampaddi</option>
+    </select>
+    
     <button id="submitBtn">Submit</button>
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
@@ -170,14 +188,11 @@
 
 
         locations.forEach(function (location) {
-            var popupContent = "<strong>" + location.name + "</strong><br>" + "Time: " + getTimeForLocation(location); // Assuming you have a function to get time for the location
+            var popupContent = "<strong>" + location.name + "</strong><br>" + "Time: " + location.time; // Assuming you have a function to get time for the location
 
             L.marker(location.coords).addTo(map).bindPopup(popupContent);
         });
-
-        function getTimeForLocation(location) {
-            return "10:00 AM"; // Static time for demonstration
-        }
+        
 
         var routingControl = L.Routing.control({
             waypoints: [

@@ -7,7 +7,7 @@ CORS(app) #inorder to avoid the cors restriction
 #Home page of the bus tracking system
 @app.route('/',methods=['POST','GET'])
 def index():
-    if request.method=='POST' and request.form['busno'] == "24": #the value returned will be a string
+    if request.method=='POST' and request.form['busno'] == "34": #the value returned will be a string
         return redirect(url_for('map'))
     else:
         return render_template('map.html')
